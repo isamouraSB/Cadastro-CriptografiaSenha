@@ -41,3 +41,4 @@ for letra in chave:
     elif letra in "Uu": senha = senha + "5"
     else: senha = senha + letra
 print(senha)
+

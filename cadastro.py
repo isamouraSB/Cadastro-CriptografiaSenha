@@ -1,3 +1,4 @@
+#cadastro usuario:
 import PySimpleGUI as sg
 
 class TelaPython:
@@ -12,12 +13,14 @@ class TelaPython:
            [sg.Text("Gênero",size=(10,0))],
            [sg.Checkbox("F",key="feminino"),sg.Checkbox("M",key="masculino"),sg.Checkbox("Prefiro não dizer",key="nulo")],
            [sg.Text("Senha",size=(10,0))],
-           [sg.Input(size=(20,0),key="senha")],
+           [sg.Input(size=(20,0),key='senha', password_char='*')],
+           [sg.Checkbox('Salvar Login?')],
            [sg.Button("Enviar",size=(7,0))]
+           
         ]
         #Janela
         self.janela = sg.Window("Dados do usuario").layout(layout)
-        
+
         
 
     def Iniciar(self):
@@ -36,7 +39,8 @@ class TelaPython:
             print(f"genero_M: {genero_M}")
             print(f"genero_nulo: {genero_nulo}")
             print(f"senha: {senha}") 
-        
+
+    
 
 
 
