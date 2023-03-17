@@ -1,6 +1,7 @@
 #cadastro usuario:
 import PySimpleGUI as sg
 
+from codificação import codificar
 class TelaPython:
     def __init__(self):
         #Layout
@@ -21,7 +22,25 @@ class TelaPython:
         #Janela
         self.janela = sg.Window("Dados do usuario").layout(layout)
 
-        
+    def codificar(input): 
+        chave = input 
+
+        senha = "" 
+        for letra in chave:
+            if letra in "Aa": senha = senha + "!"
+            elif letra in "Bb": senha = senha + "&"
+            elif letra in "Cc": senha = senha + "3"
+            elif letra in "Dd": senha = senha + "¢"
+            elif letra in "Ee": senha = senha + "?"
+            elif letra in "Ff": senha = senha + "1"
+            elif letra in "Ii": senha = senha + "&"
+            elif letra in "Mm": senha = senha + "%"
+            elif letra in "Rr": senha = senha + "@"
+            elif letra in "Ss": senha = senha + "7"
+            elif letra in "Uu": senha = senha + "5"
+            else: senha = senha + letra
+        return senha
+
 
     def Iniciar(self):
         while True:
@@ -38,7 +57,11 @@ class TelaPython:
             print(f"genero_F: {genero_F}")
             print(f"genero_M: {genero_M}")
             print(f"genero_nulo: {genero_nulo}")
-            print(f"senha: {senha}") 
+
+            codificado = codificar(senha)
+
+            print(f"senha: {codificado}") 
+
 
     
 
